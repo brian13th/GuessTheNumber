@@ -60,7 +60,9 @@ public class GuessingGame {
                         high = 100;
                         score = 10;
                         number = r.nextInt(101) + 1;
-                        System.out.println("Super number " + number);
+//      Uncomment the below line if you want to see the secret number.
+//      This is recommented for debbuging perposes
+//                      System.out.println("Super number " + number);
                         continue;
                     } else if (flag.equalsIgnoreCase("N")) {
                         System.out.println("Thank you for playing!!");
