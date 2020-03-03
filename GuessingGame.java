@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 import java.util.Random;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class GuessingGame {
 
@@ -17,7 +17,9 @@ public class GuessingGame {
         int score = 10;
         String flag = null;
         int number = r.nextInt(101) + 1;
-        System.out.println("Super number " + number);
+//      Uncomment the below line if you want to see the secret number.
+//      This is recommented for debbuging perposes
+//      System.out.println("Secret number " + number);
         System.out.println("*================================*");
         System.out.println(" Welcome to Guessing number Game");
         System.out.println("*================================*");
@@ -30,7 +32,7 @@ public class GuessingGame {
 
             if (checkInt(input)) {
                 int validInput = Integer.parseInt(input);
-                ListNums.add(validInput);
+//                ListNums.add(validInput);
                 if (validInput < low || validInput > high) {
                     System.out.printf("You didn'tprovide a number between %d και %d, try again!", low, high);
                     moves += 1;
@@ -42,7 +44,7 @@ public class GuessingGame {
                     score -= moves;
                     System.out.println("Cogratulations you found the hidden number!!!");
                     System.out.printf("Moves: %d. Score: %d. ", moves, score);
-
+//                  When user wins the game, ask if he what to play again and itinitialize the variables.
                     while (true) {
                         System.out.println("\n\nWanna play again? (Y/N)");
                         flag = sc.nextLine();
@@ -79,7 +81,7 @@ public class GuessingGame {
                     moves += 1;
                     continue;
                 }
-            } else if (input.equalsIgnoreCase("esc")) {                              // ΠΡΕΠΕΙ ΝΑ ΦΤΑΙΧΤΕΙ ΤΟ INPUT CASE
+            } else if (input.equalsIgnoreCase("esc")) {      // any time the user what to exit the game can type "esc"
                 System.out.println("Thank you for playing!!");
                 break;
             } else {
@@ -89,7 +91,7 @@ public class GuessingGame {
 
         }
     }
-
+//  Method to check if the user input is an arithmetic character and integer
     public static boolean checkInt(String input) {
         boolean fact = false;
         try {
@@ -100,15 +102,15 @@ public class GuessingGame {
         }
         return fact;
     }
-
-    public static int getMax(ArrayList List) {
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < List.size(); i++) {
-            if ((int) List.get(i) > max) {
-                max = (int) List.get(i);
-            }
-        }
-        return max;
-    }
+//  Method to find the MAX number on a ArrayList of integers
+//    public static int getMax(ArrayList List) {
+//        int max = Integer.MIN_VALUE;
+//        for (int i = 0; i < List.size(); i++) {
+//            if ((int) List.get(i) > max) {
+//                max = (int) List.get(i);
+//            }
+//        }
+//        return max;
+//    }
 
 }
